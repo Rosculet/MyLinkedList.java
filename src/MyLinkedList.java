@@ -39,6 +39,7 @@ public class MyLinkedList {
         Node added = new Node(data,currNode,currNode.getNext());
         currNode.getNext().setPrev(added);
         currNode.setNext(added);
+        size++;
 
         System.out.println("Element : " + added.getData() + " added");
     }
@@ -55,7 +56,7 @@ public class MyLinkedList {
        size--;
     }
 
-    public void remove(int index) {
+    public void removeIndex(int index) {
         Node currNode = first;
         for (int i = 0; i <= index; i++) {
             currNode = currNode.getNext();
@@ -64,6 +65,7 @@ public class MyLinkedList {
         currNode.getNext().setPrev(currNode.getPrev());
         System.out.println("Element : " + currNode.getData() + " deleted");
         currNode = null;
+        size--;
     }
 
     public int get(int index) {
